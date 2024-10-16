@@ -53,7 +53,7 @@ const Footer = () => {
             </Link>
             <Typography
               variant="p"
-              className="text-sm text-opacity-40 font-albertsans"
+              className="text-sm text-black text-opacity-60 font-albertsans"
               text="We have clothes that suits your style and which you’re proud to wear. All wears from men to women."
             />
             <div className="flex flex-row items-center justify-start gap-4">
@@ -74,22 +74,22 @@ const Footer = () => {
                 <Typography
                   variant="p"
                   text="About"
-                  className="font-albertsans text-opacity-40 text-sm pt-0 lg:pt-2"
+                  className="font-albertsans text-black text-opacity-60 text-sm pt-0 lg:pt-2"
                 />
                 <Typography
                   variant="p"
                   text="Features"
-                  className="font-albertsans text-opacity-40 text-sm"
+                  className="font-albertsans text-black text-opacity-60 text-sm"
                 />
                 <Typography
                   variant="p"
                   text="Works"
-                  className="font-albertsans text-opacity-40 text-sm"
+                  className="font-albertsans text-black text-opacity-60 text-sm"
                 />
                 <Typography
                   variant="p"
                   text="Career"
-                  className="font-albertsans text-opacity-40 text-sm"
+                  className="font-albertsans text-black text-opacity-60 text-sm"
                 />
               </div>
               <div className="flex flex-col gap-3 w-1/2 md:w-full md:gap-4 lg:gap-5">
@@ -101,22 +101,22 @@ const Footer = () => {
                 <Typography
                   variant="p"
                   text="Customer Support"
-                  className="font-albertsans text-opacity-40 text-sm pt-0 lg:pt-2"
+                  className="font-albertsans text-black text-opacity-60 text-sm pt-0 lg:pt-2"
                 />
                 <Typography
                   variant="p"
                   text="Delivery Details"
-                  className="font-albertsans text-opacity-40 text-sm"
+                  className="font-albertsans text-black text-opacity-60 text-sm"
                 />
                 <Typography
                   variant="p"
                   text="Terms & Conditions"
-                  className="font-albertsans text-opacity-40 text-sm"
+                  className="font-albertsans text-black text-opacity-60 text-sm"
                 />
                 <Typography
                   variant="p"
                   text="Privacy Policy"
-                  className="font-albertsans text-opacity-40 text-sm"
+                  className="font-albertsans text-black text-opacity-60 text-sm"
                 />
               </div>
             </div>
@@ -130,22 +130,22 @@ const Footer = () => {
                 <Typography
                   variant="p"
                   text="Account"
-                  className="font-albertsans text-opacity-40 text-sm pt-0 lg:pt-2"
+                  className="font-albertsans text-black text-opacity-60 text-sm pt-0 lg:pt-2"
                 />
                 <Typography
                   variant="p"
                   text="Manage Deliveries"
-                  className="font-albertsans text-opacity-40 text-sm"
+                  className="font-albertsans text-black text-opacity-60 text-sm"
                 />
                 <Typography
                   variant="p"
                   text="Orders"
-                  className="font-albertsans text-opacity-40 text-sm"
+                  className="font-albertsans text-black text-opacity-60 text-sm"
                 />
                 <Typography
                   variant="p"
                   text="Payments"
-                  className="font-albertsans text-opacity-40 text-sm"
+                  className="font-albertsans text-black text-opacity-60 text-sm"
                 />
               </div>
               <div className="flex flex-col gap-3 w-1/2 md:w-full md:gap-4 lg:gap-5">
@@ -157,22 +157,22 @@ const Footer = () => {
                 <Typography
                   variant="p"
                   text="Free eBooks"
-                  className="font-albertsans text-opacity-40 text-sm pt-0 lg:pt-2"
+                  className="font-albertsans text-black text-opacity-60 text-sm pt-0 lg:pt-2"
                 />
                 <Typography
                   variant="p"
                   text="Development Tutorial"
-                  className="font-albertsans text-opacity-40 text-sm"
+                  className="font-albertsans text-black text-opacity-60 text-sm"
                 />
                 <Typography
                   variant="p"
                   text="How to Blog"
-                  className="font-albertsans text-opacity-40 text-sm"
+                  className="font-albertsans text-black text-opacity-60 text-sm"
                 />
                 <Typography
                   variant="p"
                   text="Youtube Playlist"
-                  className="font-albertsans text-opacity-40 text-sm"
+                  className="font-albertsans text-black text-opacity-60 text-sm"
                 />
               </div>
             </div>
