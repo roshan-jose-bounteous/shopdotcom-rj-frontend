@@ -29,6 +29,12 @@ export async function login(formData: FormData) {
   if (signInData && signInData.user) {
     // console.log("User details:", signInData.user.id);
     useAuthStore.getState().setUserId(signInData.user.id);
+    const token = signInData.session.access_token;
+
+    // Store the JWT token in Zustand
+    useAuthStore.setState({ jwtToken: token });
+
+    console.log("JWT Token:", token);
   }
 
   // Revalidate the path and redirect

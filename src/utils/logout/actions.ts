@@ -16,6 +16,7 @@ export async function logOut(formData: FormData) {
   }
 
   useAuthStore.getState().clearUserId();
+  useAuthStore.getState().clearJwtToken();
 
   revalidatePath("/", "layout");
   redirect("/shop");

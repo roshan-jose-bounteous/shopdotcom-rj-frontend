@@ -40,19 +40,10 @@ const PLP = () => {
       <div className="hidden md:block  w-full md:w-[35%] lg:w-[21%]">
         <Filters />
       </div>
-      <div className="w-full md:w-[40%] lg:w-[75%]">
-        <ProductsContainer />   
+      <div className="w-full md:w-[60%] lg:w-[78%]">
+        <ProductsContainer />
       </div>
-      <div className="md:hidden" onClick={toggleFilters}>
-        <Filter />
-      </div>
-
-      {/* Mobile Filters */}
-      {filtersOpen && (
-        <div className="fixed bottom-0 left-0 w-full h-4/5 bg-white z-50 animate-slide-up">
-          <Filters onClose={toggleFilters} />
-        </div>
-      )}
+      
     </div>
   );
 };
