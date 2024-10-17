@@ -1,24 +1,22 @@
-// components/ImageSection.tsx
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { ProductImage } from "@/types/Product"; // Import the ProductImage type
+import { ProductImage } from "@/types/Product";
 
 interface ImageSectionProps {
-  images: ProductImage[]; // Use ProductImage type for the images prop
+  images: ProductImage[];
 }
 
 const ImageSection: React.FC<ImageSectionProps> = ({ images }) => {
   const [selectedImage, setSelectedImage] = useState(images[0]?.imageurl || "");
 
-  console.log("images: ", images);
   return (
     <div className="flex flex-col-reverse md:flex-row justify-center lg:justify-start items-start gap-3 md:gap-5 w-fit">
       <div className="flex flex-row max-w-full md:flex-col gap-3 md:gap-4">
         {images.map((img, index) => (
           <Image
             key={index}
-            src={img.imageurl} // Use the imageurl property
+            src={img.imageurl}
             width={444}
             height={296}
             alt={img.alt}
@@ -27,7 +25,7 @@ const ImageSection: React.FC<ImageSectionProps> = ({ images }) => {
                 ? "border-black"
                 : "border-gray-200"
             }`}
-            onClick={() => setSelectedImage(img.imageurl)} // Set selected image on click
+            onClick={() => setSelectedImage(img.imageurl)}
           />
         ))}
       </div>

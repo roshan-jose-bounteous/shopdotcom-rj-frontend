@@ -13,7 +13,7 @@ type ButtonProps = {
   text?: string;
   onClick?: () => void;
   disabled?: boolean;
-  className?: string; // Custom class for styling
+  className?: string; 
 };
 
 const Button = ({

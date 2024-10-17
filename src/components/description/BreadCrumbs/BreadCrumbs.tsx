@@ -1,33 +1,3 @@
-// // components/BreadCrumbs.tsx
-// "use client";
-// import React from "react";
-// import { useRouter } from "next/navigation";
-
-// interface BreadCrumbsProps {
-//   productName: string;
-// }
-
-// const BreadCrumbs: React.FC<BreadCrumbsProps> = ({ productName }) => {
-//   const router = useRouter();
-
-//   const handleShopClick = () => {
-//     router.push("/shop");
-//   };
-
-//   return (
-//     <div className="text-sm font-medium text-gray-600">
-//       <span>Home</span> &gt;{" "}
-//       <span className="cursor-pointer text-blue-500" onClick={handleShopClick}>
-//         Shop
-//       </span>{" "}
-//       &gt; <span>{productName}</span>
-//     </div>
-//   );
-// };
-
-// export default BreadCrumbs;
-
-// components/BreadCrumbs.tsx
 "use client";
 import Typography from "@/components/common/Typography";
 import React from "react";
@@ -58,11 +28,7 @@ const BreadCrumbs: React.FC<BreadCrumbsProps> = ({ productName }) => {
           />
         </Link>
         <RightBreadCrumb />
-        <Typography
-          variant="p"
-          className="text-black"
-          text={productName}
-        />
+        <Typography variant="p" className="text-black" text={productName} />
       </div>
     </div>
   );

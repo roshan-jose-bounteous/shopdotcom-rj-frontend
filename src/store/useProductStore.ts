@@ -15,8 +15,8 @@ const useProductStore = create<ProductStore>()(
       clearSelectedProduct: () => set({ selectedProductId: null }),
     }),
     {
-      name: "product-storage", // Unique name for the storage key
-      partialize: (state) => ({ selectedProductId: state.selectedProductId }), // Persist only selectedProductId
+      name: "product-storage", 
+      partialize: (state) => ({ selectedProductId: state.selectedProductId }), 
     }
   )
 );

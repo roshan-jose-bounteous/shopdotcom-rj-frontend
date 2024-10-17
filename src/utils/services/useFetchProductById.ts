@@ -1,4 +1,3 @@
-// src/utils/services/useFetchProductById.ts
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Product } from "@/types/Product";
