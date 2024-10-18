@@ -15,9 +15,8 @@ const LoginForm = () => {
     onSuccess: (data) => {
       const decodedToken = jwtDecode(data.access_token);
       console.log("decode: ", decodedToken);
-      // const user1Id = decodedToken.user_id; // Adjust based on your JWT structur
 
-      const userId = decodedToken.sub!; // Replace with actual userId retrieval logic if needed
+      const userId = decodedToken.sub!; 
       setAuth(data.access_token, userId);
       console.log(
         useAuthStore.getState().token,

@@ -5,7 +5,7 @@ import axios from "axios";
 const fetchCartItemsByUserId = async (userId: string) => {
   const response = await axios.get(
     `http://localhost:5105/api/cart/user/${userId}`
-  ); // Adjust the endpoint if necessary
+  ); 
   return response.data;
 };
 
@@ -15,6 +15,6 @@ export const useFetchCartItemsByUserId = () => {
   return useQuery({
     queryKey: ["cartItems", userId],
     queryFn: () => fetchCartItemsByUserId(userId!),
-    enabled: !!userId, // Only fetch if userId is available
+    enabled: !!userId, 
   });
 };
