@@ -24,12 +24,12 @@ export const useAddToCart = () => {
       try {
         const response = await axios.post(
           "http://localhost:5105/api/Cart/add",
-          JSON.stringify({
+          {
             user_id: userId,
             product_id: productId,
             quantity: quantity,
             size: size,
-          }),
+          },
           {
             headers: {
               "Content-Type": "application/json",

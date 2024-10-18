@@ -13,7 +13,8 @@ type ButtonProps = {
   text?: string;
   onClick?: () => void;
   disabled?: boolean;
-  className?: string; 
+  className?: string;
+  type?: string;
 };
 
 const Button = ({
@@ -22,6 +23,7 @@ const Button = ({
   children,
   className = "",
   onClick,
+  type,
 }: ButtonProps) => {
   const baseStyles = " focus:outline-none transition duration-300";
 

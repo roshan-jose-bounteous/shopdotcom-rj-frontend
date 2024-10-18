@@ -4,10 +4,11 @@ import { Product } from "@/types/Product";
 import Typography from "@/components/common/Typography";
 import WhiteTick from "../../../../public/assets/icons/WhiteTick";
 import Button from "@/components/common/Button";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import useClientAuthStore from "@/store/clientAuthStore";
 import axios from "axios";
 import { useAddToCart } from "@/utils/services/useAddToCart";
+import { useAuthStore } from "@/store/authStore";
 
 interface ProductDetailsProps {
   product: Product;
@@ -19,7 +20,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   const [quantity, setQuantity] = useState<number>(1);
 
   const router = useRouter();
-  const { jwtToken } = useClientAuthStore((state) => state);
+  const jwtToken = useAuthStore.getState().token;
   const addToCartMutation = useAddToCart();
 
   const handleColorButtonClick = (color: string) => {
@@ -45,6 +46,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
     }
 
     console.log("Add to cart logic for logged-in user");
+    router.push("/cart");
   };
   const handleSizeButtonClick = (size: string) => {
     setActiveSize(size);
@@ -129,7 +131,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
         </div>
       </div>
 
-      <div className="flex items-center gap-4 font-albertsans">
+      <div className="flex items-center gap-4 font-albertsans w-full">
         <div className="flex bg-[#f0f0f0] rounded-3xl text-sm text-black text-opacity-60 ">
           <div
             onClick={handleDecrement}

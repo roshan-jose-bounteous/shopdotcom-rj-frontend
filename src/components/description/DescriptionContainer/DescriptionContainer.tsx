@@ -4,16 +4,9 @@ import useProductStore from "@/store/useProductStore";
 import { useFetchProductById } from "@/utils/services/useFetchProductById";
 import BreadCrumbs from "@/components/description/BreadCrumbs/BreadCrumbs";
 import ProductSection from "@/components/description/ProductSection/ProductSection";
-import useClientAuthStore from "@/store/clientAuthStore";
-interface DescriptionContainerProps {
-  token: string | null;
-}
 
-const DescriptionContainer: React.FC<DescriptionContainerProps> = ({
-  token,
-}) => {
+const DescriptionContainer = () => {
   const { selectedProductId, setSelectedProductId } = useProductStore();
-  useClientAuthStore.getState().setJwtToken(token);
 
   const {
     data: product,

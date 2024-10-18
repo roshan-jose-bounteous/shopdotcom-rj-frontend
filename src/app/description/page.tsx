@@ -4,10 +4,8 @@ import useClientAuthStore from "@/store/clientAuthStore";
 import React from "react";
 
 const page = () => {
-  const { jwtToken } = useAuthStore.getState();
-  useClientAuthStore.getState().setJwtToken(jwtToken);
 
-  return <DescriptionContainer token={jwtToken} />;
+  return <DescriptionContainer />;
 };
 
 export default page;

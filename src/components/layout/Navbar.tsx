@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import React, { useState } from "react";
@@ -12,9 +10,11 @@ import Hamburger from "../../../public/assets/icons/Hamburger";
 import Button from "../common/Button";
 import SearchIcon from "../../../public/assets/icons/SearchIcon";
 import CloseIcon from "../../../public/assets/icons/CloseIcon";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter(); // Initialize useRouter
   return (
     <div className=" mx-4 md:mx-6 lg:mx-28 my-3 md:my-4 lg:my-6 ">
       <div className=" flex flex-row items-center justify-start w-full gap-2 md:gap-8 lg:gap-10 border-b pb-5 md:pb-10 ">
@@ -48,10 +48,15 @@ const Navbar = () => {
               placeholder="Search for products..."
             />
           </div>
-          <ShoppingCart />
+          <div
+            onClick={() => router.push("/cart")} // Use router.push to redirect to /cart
+            className="cursor-pointer"
+          >
+            <ShoppingCart />
+          </div>
           <Account />
         </div>
-        
+
         {isMenuOpen && (
           <div className="fixed inset-0 z-50 bg-white shadow-lg p-4 w-[50%] md:hidden transition-transform transform translate-x-0">
             <div className="flex justify-between items-center mb-4">
