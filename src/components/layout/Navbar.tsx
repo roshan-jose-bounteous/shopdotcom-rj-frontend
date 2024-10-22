@@ -30,6 +30,10 @@ const Navbar = () => {
     router.push("/login");
   };
 
+  const handleRegister = () => {
+    router.push("/register");
+  };
+
   const handleLogout = () => {
     clearAuth();
     clearAuth();
@@ -93,9 +97,14 @@ const Navbar = () => {
                   Logout
                 </Button>
               ) : (
-                <Button variant="Default" onClick={handleLogin}>
-                  Login
-                </Button>
+                <div className="flex flex-col items-start gap-1">
+                  <Button variant="Default" className="pb-2 border-b border-black border-opacity-10" onClick={handleLogin}>
+                    Login
+                  </Button>
+                  <Button variant="Default" onClick={handleRegister}>
+                    Register
+                  </Button>
+                </div>
               )}
             </PopoverContent>
           </Popover>

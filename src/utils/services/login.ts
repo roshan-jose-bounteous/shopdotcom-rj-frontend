@@ -12,7 +12,7 @@ interface LoginResponse {
 
 export const login = async (data: LoginRequest): Promise<LoginResponse> => {
   const response = await axios.post<LoginResponse>(
-    "http://localhost:5105/api/Login",
+    "http://localhost:5105/api/login",
     data
   );
   console.log(response);
