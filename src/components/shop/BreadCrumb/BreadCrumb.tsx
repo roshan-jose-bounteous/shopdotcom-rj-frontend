@@ -32,7 +32,6 @@ const BreadCrumb = () => {
           <Filter />
         </div>
 
-        {/* Mobile Filters */}
         {filtersOpen && (
           <div className="fixed bottom-0 left-0 w-full h-4/5 bg-white z-50 animate-slide-up">
             <Filters onClose={toggleFilters} />

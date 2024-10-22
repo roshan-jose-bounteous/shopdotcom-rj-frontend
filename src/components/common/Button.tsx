@@ -10,7 +10,7 @@ type ButtonProps = {
     | "Quantity"
     | "AddToCart";
   children?: ReactNode;
-  text?: string;
+  text?: string | number;
   onClick?: () => void;
   disabled?: boolean;
   className?: string;

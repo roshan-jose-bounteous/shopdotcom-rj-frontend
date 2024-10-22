@@ -10,7 +10,7 @@ const LeftArrow = () => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M12.6667 6.83333H1M1 6 .83333L6.83333 12.6667M1 6.83333L6.83333 1"
+        d="M12.8332 6.99996H1.1665M1.1665 6.99996L6.99984 12.8333M1.1665 6.99996L6.99984 1.16663"
         stroke="black"
         strokeWidth="1.67"
         strokeLinecap="round"

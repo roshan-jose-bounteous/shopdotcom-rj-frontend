@@ -15,7 +15,7 @@ const fetchProducts = async (
   if (sort) params.append("sort", sort);
 
   const response = await axios.get<Product[]>(
-    `http://localhost:5105/api/Product/filter?${params.toString()}`
+    `http://localhost:5105/api/Product/products?${params.toString()}`
   );
 
   console.log("response: ", response);

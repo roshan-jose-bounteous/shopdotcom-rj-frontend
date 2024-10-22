@@ -11,13 +11,39 @@ import Button from "../common/Button";
 import SearchIcon from "../../../public/assets/icons/SearchIcon";
 import CloseIcon from "../../../public/assets/icons/CloseIcon";
 import { useRouter } from "next/navigation";
+import { useAuthStore } from "@/store/authStore";
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from "@/components/ui/popover";
+import { useToast } from "@/hooks/use-toast";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const router = useRouter(); // Initialize useRouter
+  const router = useRouter();
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+  const clearAuth = useAuthStore((state) => state.clearAuth);
+  const { toast } = useToast(); // Get toast function from the hook
+
+  const handleLogin = () => {
+    router.push("/login");
+  };
+
+  const handleLogout = () => {
+    clearAuth();
+    clearAuth();
+    toast({
+      title: "Logged Out",
+      description: "You have successfully logged out.",
+      duration: 3000, // Toast duration
+    });
+    router.push("/shop");
+  };
+
   return (
-    <div className=" mx-4 md:mx-6 lg:mx-28 my-3 md:my-4 lg:my-6 ">
-      <div className=" flex flex-row items-center justify-start w-full gap-2 md:gap-8 lg:gap-10 border-b pb-5 md:pb-10 ">
+    <div className="mx-4 md:mx-6 lg:mx-28 my-3 md:my-4 lg:my-6">
+      <div className="flex flex-row items-center justify-start w-full gap-2 md:gap-8 lg:gap-10 border-b pb-5 md:pb-10">
         <div className="sm:block md:hidden flex items-center">
           <Button variant="Default" onClick={() => setIsMenuOpen(true)}>
             <Hamburger />
@@ -31,7 +57,10 @@ const Navbar = () => {
           />
         </Link>
         <div className="hidden md:flex flex-row gap-9 lg:gap-10 font-albertsans md:w-full lg:w-4/12">
-          <Typography variant="p" text="Shop" />
+          <Link href="/shop">
+            <Typography variant="p" text="Shop" />
+          </Link>
+
           <Typography variant="p" text="On Sale" />
           <Typography variant="p" text="New Arrivals" />
           <Typography variant="p" text="Brands" />
@@ -48,13 +77,28 @@ const Navbar = () => {
               placeholder="Search for products..."
             />
           </div>
-          <div
-            onClick={() => router.push("/cart")} // Use router.push to redirect to /cart
-            className="cursor-pointer"
-          >
+          <div onClick={() => router.push("/cart")} className="cursor-pointer">
             <ShoppingCart />
           </div>
-          <Account />
+          {/* Account Popover */}
+          <Popover>
+            <PopoverTrigger>
+              <div className="cursor-pointer">
+                <Account />
+              </div>
+            </PopoverTrigger>
+            <PopoverContent className="p-4">
+              {isAuthenticated ? (
+                <Button variant="Default" onClick={handleLogout}>
+                  Logout
+                </Button>
+              ) : (
+                <Button variant="Default" onClick={handleLogin}>
+                  Login
+                </Button>
+              )}
+            </PopoverContent>
+          </Popover>
         </div>
 
         {isMenuOpen && (

@@ -1,19 +1,16 @@
-
-
 "use client";
 import React, { useState } from "react";
-import { useFetchCartItemsByUserId } from "@/utils/services/useFetchCartItemsByUserId"; 
-import { CartItemWithProduct } from "@/types/CartItemWithProduct"; 
-import CartProductCard from "@/components/cart/CartProductCard/CartProductCard"; 
-import PriceSummary from "../cart/PriceSummary/PriceSummary"; 
-import { ScrollArea } from "@/components/ui/scroll-area"; 
+import { useFetchCartItemsByUserId } from "@/utils/services/useFetchCartItemsByUserId";
+import { CartItemWithProduct } from "@/types/CartItemWithProduct";
+import CartProductCard from "@/components/cart/CartProductCard/CartProductCard";
+import PriceSummary from "../cart/PriceSummary/PriceSummary";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import Checkout from "../cart/Checkout/Checkout";
 
 const CartContainer = () => {
   const { data: cartItems, isLoading, isError } = useFetchCartItemsByUserId();
 
-  const [discount] = useState(113); 
-  const [deliveryFee] = useState(15); 
+  const [deliveryFee] = useState(15);
 
   const calculateSubtotal = () => {
     return cartItems.reduce(
@@ -36,7 +33,7 @@ const CartContainer = () => {
   }
 
   const subtotal = calculateSubtotal();
-
+  const discount = subtotal * 0.1;  
   return (
     <div>
       <div className="flex flex-col lg:flex-row gap-4 justify-between my-4">
